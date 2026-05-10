@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüseyn Aşirov | Security Engineer & Red Teamer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #080b10;
+            --card-bg: #11161d;
+            --primary-color: #00ff41; 
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --glow: 0 0 15px rgba(0, 255, 65, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(0, 255, 65, 0.05) 0%, transparent 70%),
+                        linear-gradient(rgba(8, 11, 16, 0.85), rgba(8, 11, 16, 0.85)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px; /* Kvadrat amma küncləri azca yumşaq */
+            border: 2px solid var(--primary-color);
+            margin-bottom: 25px;
+            object-fit: cover;
+            object-position: top;
+            box-shadow: var(--glow);
+            transition: 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+        }
+
+        .hero-h1 { 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            color: var(--primary-color); 
+            margin: 0; 
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: var(--glow);
+        }
+
+        .hero-p { 
+            font-size: 1.2rem; 
+            color: var(--accent-color); 
+            margin: 15px 0; 
+            font-family: 'Courier New', monospace;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+
+        h2 { 
+            border-left: 5px solid var(--primary-color); 
+            padding-left: 20px;
+            color: var(--text-color);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+            background: #1c2128;
+        }
+
+        .card h3 { 
+            color: var(--primary-color); 
+            margin-top: 0; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p { font-size: 0.95rem; color: #8b949e; }
+
+        /* Badges */
+        .badge-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: center; }
+        header .badge-container { margin-bottom: 30px; }
+        
+        .badge {
+            background: rgba(0, 255, 65, 0.05);
+            padding: 6px 15px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            font-family: monospace;
+        }
+
+        /* Cert List */
+        .cert-list { list-style: none; padding: 0; }
+        .cert-list li { 
+            margin-bottom: 15px; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
+        }
+        .cert-list li:hover { border-color: var(--accent-color); padding-left: 25px; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover { 
+            background: var(--primary-color); 
+            color: #000; 
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+        }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 80px 20px; 
+            border-top: 1px solid var(--border-color); 
+            background: #0d1117; 
+        }
+        
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: var(--text-color); font-size: 2rem; margin: 0 20px; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary-color); transform: scale(1.2); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="./assets/profil_image.jpeg" alt="Hüseyn Aşirov" class="profile-img">
+        <h1 class="hero-h1">Hüseyn Aşırov</h1>
+        <p class="hero-p">> Security Engineer | Red Teamer | Network Engineer</p>
+        <div class="badge-container">
+            <span class="badge">RED TEAMING</span>
+            <span class="badge">SOC L1</span>
+            <span class="badge">RHEL ADMIN</span>
+            <span class="badge">CCNA</span>
+        </div>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=huseynasirov305@gmail.com" target="_blank" class="btn">
+            <i class="fas fa-terminal"></i> Terminalı Aç & Yaz
+        </a>
+    </header>
+
+    <div class="container">
+        
+        <section id="engineering">
+            <h2><i class="fas fa-microchip"></i> Security Engineering & Defense</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fas fa-shield-halved"></i> Infra Hardening</h3>
+                    <p>CIS Benchmarks əsasında Windows/Linux mühitlərinin bərkidilməsi. Active Directory Tiered Administration modelinin qurulması.</p>
+                    <div class="badge-container" style="justify-content: flex-start;">
+                        <span class="badge">GPO</span>
+                        <span class="badge">LSA Protection</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-satellite-dish"></i> Detection</h3>
+                    <p>Wazuh XDR və Splunk vasitəsilə mərkəzləşdirilmiş log analizi və insidentlərin monitorinqi.</p>
+                    <div class="badge-container" style="justify-content: flex-start;">
+                        <span class="badge">Wazuh</span>
+                        <span class="badge">SIEM</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-network-wired"></i> Network Eng.</h3>
+                    <p>VLAN seqmentasiyası, OSPF routing və Firewall (pfSense/iptables) siyasətlərinin idarəedilməsi.</p>
+                    <div class="badge-container" style="justify-content: flex-start;">
+                        <span class="badge">Routing</span>
+                        <span class="badge">DMZ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offensive">
+            <h2><i class="fas fa-user-secret"></i> Offensive Operations</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fas fa-bug"></i> Pen-Testing</h3>
+                    <p>Web (OWASP Top 10) sızma testləri. Burp Suite Pro və Metasploit ilə infrastrukturun zəiflik analizləri.</p>
+                    <div class="badge-container" style="justify-content: flex-start;">
+                        <span class="badge">Burp Suite</span>
+                        <span class="badge">Metasploit</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-code"></i> Automation</h3>
+                    <p>Python və Bash ilə xüsusi reconnaissance (kəşfiyyat) və istismar alətlərinin skriptləşdirilməsi.</p>
+                    <div class="badge-container" style="justify-content: flex-start;">
+                        <span class="badge">Python3</span>
+                        <span class="badge">Scapy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certs">
+            <h2><i class="fas fa-certificate"></i> Professional Sertifikatlar</h2>
+            <div class="grid" style="grid-template-columns: 1fr;">
+                <div class="card">
+                    <ul class="cert-list">
+                        <li><i class="fas fa-award" style="color: var(--primary-color);"></i> <strong>Certified Red Team Analyst (CRTA)</strong></li>
+                        <li><i class="fas fa-award" style="color: var(--primary-color);"></i> <strong>Certified Network Security Practitioner (CNSP)</strong></li>
+                        <li><i class="fas fa-award" style="color: var(--primary-color);"></i> <strong>Red Hat System Administration I (RH124)</strong></li>
+                        <li><i class="fas fa-award" style="color: var(--primary-color);"></i> <strong>Certified Social Engineering Defense Practitioner (CSEDP)</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/huseyn-asirov" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=huseynasirov305@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>Hüseyn Aşirov &copy; 2026 | Built for Cyber Resilience</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: var(--primary-color); opacity: 0.7;">[ SYSTEM STATUS: SECURE ]</p>
+    </footer>
+
+</body>
+</html>
