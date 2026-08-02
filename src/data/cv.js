@@ -1,6 +1,6 @@
 // All content on this site is transcribed directly from Huseyn's CV.
 // Nothing in this file should be invented — if a fact isn't here, it isn't on the CV.
-
+import photo from "../assets/profil_image.jpeg";
 export const profile = {
   name: 'Huseyn Ashirov',
   roles: ['Junior Network Engineer', 'Junior System Administrator', 'Technical Support'],
@@ -8,7 +8,7 @@ export const profile = {
   phone: '+994 (55) 344-0456',
   email: 'huseynasirov305@gmail.com',
   linkedin: 'https://www.linkedin.com/in/huseyn-asirov',
-  photo: 'https://ashirovhuseyn.github.io/portfolio/assets/profil_image.jpeg',
+  photo: photo,
   resumeUrl: '/Huseyn_Ashirov_CV.pdf',
   summary:
     "Junior Network Engineer / System Administrator with hands-on experience supporting enterprise network and server infrastructure, including Cisco switching and access points, and Windows Server (AD, GPO, DNS, DHCP). Solid foundation in TCP/IP, routing and switching (OSPF, EIGRP, BGP, VLAN, STP), NAT/DHCP/DNS, and Linux (Red Hat) system administration, reinforced by CCNA-level lab work and industry certifications. Security-first troubleshooter with exposure to SIEM monitoring and log analysis (Splunk, Wazuh XDR), firewall policy administration, and security hardening on both Linux and Windows platforms.",
